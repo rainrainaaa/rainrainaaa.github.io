@@ -3,428 +3,1138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomoro Coffee | Premium Cafe Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Jost:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Aileen Raina - Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0e27;
+            color: #00ff99;
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix Background & Grid Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 255, 150, 0.05) 25%, rgba(0, 255, 150, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 150, 0.05) 75%, rgba(0, 255, 150, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 255, 150, 0.05) 25%, rgba(0, 255, 150, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 150, 0.05) 75%, rgba(0, 255, 150, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 2;
+            animation: scanlines 8s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Glow Effects */
+        .neon-glow {
+            text-shadow: 
+                0 0 10px rgba(0, 255, 150, 0.8),
+                0 0 20px rgba(0, 255, 150, 0.6),
+                0 0 30px rgba(0, 255, 150, 0.4),
+                0 0 40px rgba(0, 255, 150, 0.2);
+        }
+
+        .neon-glow-blue {
+            text-shadow: 
+                0 0 10px rgba(0, 100, 255, 0.8),
+                0 0 20px rgba(0, 100, 255, 0.6),
+                0 0 30px rgba(0, 100, 255, 0.4);
+        }
+
+        .neon-glow-pink {
+            text-shadow: 
+                0 0 10px rgba(255, 0, 150, 0.8),
+                0 0 20px rgba(255, 0, 150, 0.6),
+                0 0 30px rgba(255, 0, 150, 0.4);
+        }
+
+        .neon-glow-purple {
+            text-shadow: 
+                0 0 10px rgba(180, 0, 255, 0.8),
+                0 0 20px rgba(180, 0, 255, 0.6),
+                0 0 30px rgba(180, 0, 255, 0.4);
+        }
+
+        .glow-box {
+            box-shadow: 
+                0 0 20px rgba(0, 255, 150, 0.5),
+                inset 0 0 20px rgba(0, 255, 150, 0.1);
+            border: 1px solid rgba(0, 255, 150, 0.3);
+        }
+
+        .glow-box-blue {
+            box-shadow: 
+                0 0 20px rgba(0, 100, 255, 0.5),
+                inset 0 0 20px rgba(0, 100, 255, 0.1);
+            border: 1px solid rgba(0, 100, 255, 0.3);
+        }
+
+        .glow-box-pink {
+            box-shadow: 
+                0 0 20px rgba(255, 0, 150, 0.5),
+                inset 0 0 20px rgba(255, 0, 150, 0.1);
+            border: 1px solid rgba(255, 0, 150, 0.3);
+        }
+
+        /* Typing Animation */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            margin-left: 5px;
+            background-color: #00ff99;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            border-right: 2px solid #00ff99;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end);
+        }
+
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .glitch {
+            position: relative;
+            animation: glitch 0.3s ease-in-out infinite;
+        }
+
+        .glitch:hover {
+            animation: glitch 0.15s ease-in-out infinite;
+        }
+
+        /* Profile Image Glow */
+        .profile-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                #00ff99,
+                #0064ff,
+                #ff0096,
+                #00ff99
+            );
+            animation: rotate 4s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .profile-image img {
+            position: relative;
+            border-radius: 50%;
+            border: 3px solid #0a0e27;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hologram Effect for Projects */
+        .hologram {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .hologram::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 150, 0.1) 50%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .hologram:hover::before {
+            opacity: 1;
+            animation: hologram-shine 0.5s ease;
+        }
+
+        @keyframes hologram-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Particle Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00ff99;
+            border-radius: 50%;
+            animation: float 3s ease-in infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: #0064ff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 14, 39, 0.95);
+            top: 0;
+        }
+
+        nav a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff99;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 5;
+            min-height: 75vh;
+            height: 75vh;
+            padding-top: 100px;
+            padding-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            margin-bottom: 0;
+        }
+
+        /* Floating Animation */
+        @keyframes float-hero {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float-hero 3s ease-in-out infinite;
+        }
+
+        /* Project Grid */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* Button Glow */
+        .btn-glow {
+            position: relative;
+            padding: 10px 30px;
+            border: 2px solid #00ff99;
+            background: transparent;
+            color: #00ff99;
+            cursor: pointer;
+            font-family: 'Space Mono', monospace;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 150, 0.3);
+        }
+
+        .btn-glow:hover {
+            background: rgba(0, 255, 150, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 150, 0.8);
+            transform: scale(1.05);
+        }
+
+        .btn-glow-blue {
+            border-color: #0064ff;
+            color: #0064ff;
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.3);
+        }
+
+        .btn-glow-blue:hover {
+            background: rgba(0, 100, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.8);
+        }
+
+        .btn-glow-pink {
+            border-color: #ff0096;
+            color: #ff0096;
+            box-shadow: 0 0 10px rgba(255, 0, 150, 0.3);
+        }
+
+        .btn-glow-pink:hover {
+            background: rgba(255, 0, 150, 0.1);
+            box-shadow: 0 0 20px rgba(255, 0, 150, 0.8);
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 4;
+            background: transparent;
+            display: block;
+            width: 100%;
+        }
+
+        /* Header Title */
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Divider Line with Glow */
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff99, #0064ff, transparent);
+            box-shadow: 0 0 20px rgba(0, 255, 150, 0.5);
+            margin: 40px 0;
+        }
+
+        /* Tech Stack */
+        .tech-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 8px 8px 8px 0;
+            border: 1px solid #0064ff;
+            color: #0064ff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            background: rgba(0, 100, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(0, 100, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-link {
+            display: inline-block;
+            margin: 10px 20px 10px 0;
+            padding: 12px 24px;
+            border: 2px solid #ff0096;
+            color: #ff0096;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background: transparent;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 0, 150, 0.15);
+            box-shadow: 0 0 20px rgba(255, 0, 150, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: rgba(0, 100, 255, 0.2);
+            border: 2px solid #0064ff;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.3);
+        }
+
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #0064ff;
+            border-radius: 50%;
+            top: 1px;
+            left: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 100, 255, 0.8);
+        }
+
+        .theme-toggle:hover {
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.6);
+        }
+
+        .theme-toggle.light-mode::after {
+            left: 27px;
+            background: #ffb800;
+            box-shadow: 0 0 5px rgba(255, 184, 0, 0.8);
+        }
+
+        /* Light Mode Theme */
+        body.light-mode {
+            background: #f8f9fa;
+            color: #1a1a2e;
+        }
+
+        body.light-mode::before {
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 100, 255, 0.03) 25%, rgba(0, 100, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 100, 255, 0.03) 75%, rgba(0, 100, 255, 0.03) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 100, 255, 0.03) 25%, rgba(0, 100, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 100, 255, 0.03) 75%, rgba(0, 100, 255, 0.03) 76%, transparent 77%, transparent);
+        }
+
+        body.light-mode::after {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.03),
+                rgba(0, 0, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+        }
+
+        body.light-mode .neon-glow {
+            text-shadow: 
+                0 0 10px rgba(0, 100, 255, 0.4),
+                0 0 20px rgba(0, 100, 255, 0.2);
+        }
+
+        body.light-mode .neon-glow-blue {
+            text-shadow: 
+                0 0 10px rgba(0, 100, 255, 0.4),
+                0 0 20px rgba(0, 100, 255, 0.2);
+        }
+
+        body.light-mode .neon-glow-pink {
+            text-shadow: 
+                0 0 10px rgba(255, 0, 150, 0.4),
+                0 0 20px rgba(255, 0, 150, 0.2);
+        }
+
+        body.light-mode .glow-box {
+            box-shadow: 
+                0 0 20px rgba(0, 100, 255, 0.3),
+                inset 0 0 20px rgba(0, 100, 255, 0.05);
+            border: 1px solid rgba(0, 100, 255, 0.2);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        body.light-mode .glow-box-blue {
+            box-shadow: 
+                0 0 20px rgba(0, 100, 255, 0.3),
+                inset 0 0 20px rgba(0, 100, 255, 0.05);
+            border: 1px solid rgba(0, 100, 255, 0.2);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        body.light-mode .glow-box-pink {
+            box-shadow: 
+                0 0 20px rgba(255, 0, 150, 0.3),
+                inset 0 0 20px rgba(255, 0, 150, 0.05);
+            border: 1px solid rgba(255, 0, 150, 0.2);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        body.light-mode nav {
+            background: rgba(248, 249, 250, 0.9);
+            border-color: rgba(0, 100, 255, 0.2);
+        }
+
+        body.light-mode nav a {
+            color: #1a1a2e;
+        }
+
+        body.light-mode nav a::after {
+            background: #0064ff;
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.4);
+        }
+
+        body.light-mode .btn-glow {
+            border-color: #0064ff;
+            color: #0064ff;
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.2);
+        }
+
+        body.light-mode .btn-glow:hover {
+            background: rgba(0, 100, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.5);
+        }
+
+        body.light-mode .btn-glow-blue {
+            border-color: #0064ff;
+            color: #0064ff;
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.2);
+        }
+
+        body.light-mode .btn-glow-blue:hover {
+            background: rgba(0, 100, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.5);
+        }
+
+        body.light-mode .btn-glow-pink {
+            border-color: #ff0096;
+            color: #ff0096;
+            box-shadow: 0 0 10px rgba(255, 0, 150, 0.2);
+        }
+
+        body.light-mode .btn-glow-pink:hover {
+            background: rgba(255, 0, 150, 0.1);
+            box-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
+        }
+
+        body.light-mode .tech-badge {
+            border-color: #0064ff;
+            color: #0064ff;
+            background: rgba(0, 100, 255, 0.05);
+        }
+
+        body.light-mode .tech-badge:hover {
+            background: rgba(0, 100, 255, 0.15);
+            box-shadow: 0 0 10px rgba(0, 100, 255, 0.3);
+        }
+
+        body.light-mode .contact-link {
+            border-color: #ff0096;
+            color: #ff0096;
+            background: transparent;
+        }
+
+        body.light-mode .contact-link:hover {
+            background: rgba(255, 0, 150, 0.1);
+            box-shadow: 0 0 20px rgba(255, 0, 150, 0.4);
+        }
+
+        body.light-mode .divider {
+            background: linear-gradient(90deg, transparent, #0064ff, #ff0096, transparent);
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.3);
+        }
+
+        body.light-mode h1
+        {color:#104aa2;
+        }
+        body.light-mode h2,
+        body.light-mode h3 {
+            color: #006aff;
+        }
+
+        body.light-mode p {
+            color: #679fff;
+        }
+
+        /* Section Spacing */
+        #about {
+            margin-top: 100px;
+            padding: 80px 40px 60px 40px;
+            clear: both;
+        }
+
+        #projects {
+            margin-top: 80px;
+            padding: 80px 40px 60px 40px;
+            clear: both;
+        }
+
+        #contact {
+            margin-top: 80px;
+            padding: 80px 40px 60px 40px;
+            clear: both;
+        }
+
+        body.light-mode .text-blue-300 {
+            color: #6392d7;
+        }
+
+        body.light-mode .text-blue-400 {
+            color: #3b71c2;
+        }
+
+        body.light-mode .text-pink-300 {
+            color: #ff0096;
+        }
+
+        body.light-mode .text-pink-400 {
+            color: #ff0096;
+        }
+
+        body.light-mode .text-green-400 {
+            color: #56b169;
+        }
+
+        body.light-mode .project-3-text {
+            color: #c3ffbd;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                min-height: 65vh;
+                height: 65vh;
+                padding-top: 90px;
+                padding-bottom: 40px;
+            }
+
+            #about,
+            #projects,
+            #contact {
+                margin-top: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                min-height: 55vh;
+                height: auto;
+                padding-top: 70px;
+                padding-bottom: 40px;
+            }
+
+            .profile-image {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .profile-image img {
+                border-width: 2px;
+            }
+
+            .btn-glow,
+            .btn-glow-blue,
+            .btn-glow-pink {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            #about,
+            #projects,
+            #contact {
+                padding: 40px 15px;
+                margin-top: 60px;
+                clear: both;
+            }
+
+            .divider {
+                margin: 30px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding-top: 50px;
+            }
+
+            .profile-image {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .float-animation {
+                animation: none;
+            }
+
+            .tech-badge {
+                padding: 6px 12px;
+                margin: 6px 6px 6px 0;
+                font-size: 0.8rem;
+            }
+
+            #about,
+            #projects,
+            #contact {
+                padding: 30px 12px;
+                margin-top: 20px;
+            }
+
+            .contact-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: 8px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container-wide nav-content">
-            <div class="logo">TOMORO</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact" class="btn-nav-res">Reserve Table</a></li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glow-box-blue bg-opacity-50 border-b-2 border-blue-500 border-opacity-30">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 style="font-size: 1.5rem; margin: 0;" class="neon-glow">rai</h1>
+            <div class="flex gap-8 items-center">
+                <a href="#home" class="text-sm md:text-base hover:text-blue-400 transition">HOME</a>
+                <a href="#projects" class="text-sm md:text-base hover:text-blue-400 transition">PROJECTS</a>
+                <a href="#about" class="text-sm md:text-base hover:text-blue-400 transition">ABOUT</a>
+                <a href="#contact" class="text-sm md:text-base hover:text-blue-400 transition">CONTACT</a>
+                <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode"></button>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header id="home" class="hero">
-        <div class="hero-bg">
-            <img src="Tomoro Coffee.jpg" alt="Premium Coffee">
-        </div>
-        <div class="hero-title">
-            <span class="fade-up">100% Arabica Experience</span>
-            <h1>Tomoro <i>Coffee</i></h1>
-            <p>Start Your Tomorrow with a Perfect Coffee</p>
-            </div>
-        </div>
-    </header>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-white">
-        <div class="container">
-            <div class="sub">About Us</div>
-            <h2 class="luxury-title">Lebih Dari Sekadar Kopi</h2>
-            
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>Filosofi Tomoro Coffee</h3>
-                    <p>"Tomoro Coffee" bukan hanya nama, melainkan filosofi hidup. Kami percaya bahwa setiap tegukan kopi adalah ritual untuk mempersiapkan diri menghadapi hari esok. Bukan sekadar minuman, kopi adalah momen berharga untuk reflexi diri dan mencari inspirasi.</p>
-                    <p>Kami menghadirkan pengalaman cafe yang cozy, aesthetic, dan premium. Tempat di mana Anda bisa bersantai di sore hari, berbagi cerita dengan teman, atau sekadar menemukan ketenangan dalam kehidupan yang sibuk.</p>
-                </div>
-                <div class="about-image">
-                    <img src="Tomoro Coffee (1).jpg" alt="Coffee Brewing">
+    <!-- Hero Section -->
+    <section id="home" class="hero pt-20">
+        <!-- Particle Effects -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 30%; left: 80%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 60%; left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 70%; right: 15%; animation-delay: 0.5s;"></div>
+
+        <div class="content text-center">
+
+            <!-- Profile Image -->
+            <div class="mb-8 flex justify-center float-animation">
+                <div class="profile-image w-48 h-48 md:w-56 md:h-56">
+                    <img src="anak e gunawan.png" alt="Developer Profile" class="w-full h-full object-cover">
                 </div>
             </div>
 
-            <div class="values-section">
-                <div class="value-card">
-                    <h4>Premium Quality</h4>
-                    <p>Menggunakan biji kopi pilihan 100% Arabica dari perkebunan terbaik</p>
-                </div>
-                <div class="value-card">
-                    <h4>Aesthetic Space</h4>
-                    <p>Desain interior modern dengan sudut-sudut yang instagrammable</p>
-                </div>
-                <div class="value-card">
-                    <h4>Cozy Vibes</h4>
-                    <p>Atmosfer hangat dan nyaman untuk setiap momen berharga Anda</p>
-                </div>
+            <!-- Name with Typing Animation -->
+            <div class="mb-4">
+                <h1 class="neon-glow-blue typing-text" style="display: inline-block; width: 100%; text-align: center;">
+                    AILEEN RAINA EARTHA GUNAWAN
+                </h1>
             </div>
-        </div>
+
+            <!-- Role with typing effect -->
+            <div class="mb-8">
+                <p class="text-2xl md:text-3xl neon-glow-pink" style="letter-spacing: 2px;">
+                 Developer
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Description -->
+            <p class="max-w-2xl mx-auto text-lg leading-relaxed mb-8 text-blue-300">
+              Developer (pengembang) adalah profesional yang merancang, membangun, menguji, dan memelihara perangkat lunak (software), aplikasi mobile, 
+              website, atau game menggunakan bahasa pemrograman.<br></p>
     </section>
 
-    <!-- MENU SECTION -->
-    <section id="menu" class="section-cream">
-        <div class="container">
-            <div class="sub">Our Collection</div>
-            <h2 class="luxury-title">Pilihan Menu Premium</h2>
-            
-            <div class="luxury-menu-wrapper">
-                <!-- COFFEE MENU -->
-                <div class="menu-column">
-                    <div class="category-label">ESPRESSO-BASED</div>
-                    
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Espresso Classic</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 25.000</span>
+    <!-- AboutSection -->
+    <section id="about" class="content max-w-6xl mx-auto px-4 py-20">
+        <h2 class="neon-glow-blue mb-12">PENDIDIKAN & PENGALAMAN</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- About Text -->
+            <div>
+                <p class="text-lg leading-relaxed mb-6 text-blue-300">
+                    pendidikan: SMA(SRMA 24 KEDIRI),SMP (SMPN 1 PARE),SD (SDN 1 LANGENHARJO), TK (TK DHARMA WANITA PELEM)
+                </p>
+                <p class="text-lg leading-relaxed mb-6 text-blue-300">
+                    PENGALAMAN: Pengalaman Membuat Website
+Proyek Website Portofolio Pribadi
+Tahun: 2026
+Membuat website portofolio menggunakan HTML, CSS, dan JavaScript Mendesain tampilan yang modern dan aesthetic Mengatur layout responsif untuk berbagai perangkat
+Proyek Website Café / UMKM
+Digital Agency | 2025
+Mendesain website bertema cozy dan estetik Menambahkan fitur menu, galeri, dan informasi kontak Fokus pada user experience dan tampilan visual
+Junior Developer
+Web Development Studio | 2025- 2026
+Mengembangkan website responsif, debugging, dan maintenance aplikasi web.
+
+            <!-- Skills -->
+            <div>
+                <h3 class="neon-glow-pink mb-6">KEY SKILLS</h3>
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-blue-400 font-bold mb-2">Frontend Development</p>
+                        <div class="flex flex-wrap">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Tailwind CSS</span>
                         </div>
-                        <p class="item-desc">Single shot espresso dengan crema yang sempurna</p>
                     </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Cappuccino Premium</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 35.000</span>
+                    <div>
+                        <p class="text-pink-400 font-bold mb-2">Backend Development</p>
+                        <div class="flex flex-wrap">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">DLL</span>
                         </div>
-                        <p class="item-desc">Espresso dengan steamed milk dan latte art</p>
                     </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Caramel Macchiato</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 40.000</span>
+                    <div>
+                        <p class="text-green-400 font-bold mb-2">Tools & Platforms</p>
+                        <div class="flex flex-wrap">
+                            <span class="tech-badge">Git</span>
                         </div>
-                        <p class="item-desc">Kombinasi manis caramel dengan espresso dan milk</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Flat White</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 38.000</span>
-                        </div>
-                        <p class="item-desc">Smooth espresso dengan microfoam milk</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Americano</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 28.000</span>
-                        </div>
-                        <p class="item-desc">Espresso dengan hot water untuk rasa panjang</p>
-                    </div>
-
-                    <div class="category-label" style="margin-top: 60px;">SPECIALTY COFFEE</div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Affogato</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 32.000</span>
-                        </div>
-                        <p class="item-desc">Vanilla ice cream dengan hot espresso</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Cold Brew</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 35.000</span>
-                        </div>
-                        <p class="item-desc">Kopi dingin yang smooth dan less acidic</p>
-                    </div>
-                </div>
-
-                <!-- NON-COFFEE & DESSERT MENU -->
-                <div class="menu-column">
-                    <div class="category-label">NON-COFFEE</div>
-                    
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Matcha Latte</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 38.000</span>
-                        </div>
-                        <p class="item-desc">Premium matcha latte dengan steamed milk</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Chocolate Mocha</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 40.000</span>
-                        </div>
-                        <p class="item-desc">Premium cocoa dengan espresso dan whipped cream</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Iced Lemon Tea</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 25.000</span>
-                        </div>
-                        <p class="item-desc">Teh segar dengan lemon dan ice</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Strawberry Lemonade</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 32.000</span>
-                        </div>
-                        <p class="item-desc">Lemon segar dengan strawberry puree</p>
-                    </div>
-
-                    <div class="category-label" style="margin-top: 60px;">DESSERTS & FOOD</div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Tiramisu Cake</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 45.000</span>
-                        </div>
-                        <p class="item-desc">Classic tiramisu dengan mascarpone dan cocoa</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Chocolate Lava Cake</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 48.000</span>
-                        </div>
-                        <p class="item-desc">Warm chocolate cake dengan melting center</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Croissant Butter</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 35.000</span>
-                        </div>
-                        <p class="item-desc">Fresh croissant premium dari baker lokal</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Cheesecake Premium</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 50.000</span>
-                        </div>
-                        <p class="item-desc">New York style cheesecake dengan blueberry</p>
-                    </div>
-
-                    <div class="luxury-item">
-                        <div class="item-head">
-                            <h3>Matcha Cheesecake</h3>
-                            <div class="line"></div>
-                            <span class="price">Rp 52.000</span>
-                        </div>
-                        <p class="item-desc">Fusion dessert dengan matcha dan cheese</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="divider"></div>
     </section>
 
-    <!-- GALLERY SECTION - AESTHETIC CORNERS -->
-    <section id="gallery" class="section-white">
-        <div class="container">
-            <div class="sub">Visual Story</div>
-            <h2 class="luxury-title">Aesthetic Cafe Corners</h2>
-            <p class="section-desc">Nikmati setiap sudut cafe yang dirancang khusus untuk menciptakan momen aesthetic Anda</p>
-            
-            <!-- Aesthetic Grid -->
-            <div class="aesthetic-grid">
-                <div class="grid-item wide">
-                    <img src="download (45).jpg" alt="Aesthetic Corner 1">
-                </div>
-                <div class="grid-item tall">
-                    <img src="cafe.jpg" alt="Aesthetic Corner 2">
-                </div>
-                <div class="grid-item">
-                    <img src="🍀.jpg" alt="Coffee Detail">
-                </div>
-                <div class="grid-item">
-                    <img src="Tomoro coffe.jpg" alt="Latte Art">
-                </div>
-                <div class="grid-item">
-                    <img src="📍Tomoro Coffe Jember.jpg" alt="Barista">
-                </div>
-                <div class="grid-item wide tall">
-                    <img src="download (26).jpg" alt="Cafe Interior">
+    <!-- Projects Section -->
+    <section id="projects" class="content max-w-6xl mx-auto px-4 py-20">
+        <h2 class="neon-glow-green mb-12">FEATURED PROJECTS</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="project-card glow-box hologram">
+                <div class="p-6 bg-gradient-to-br from-blue-900 to-black rounded-lg">
+                    <div class="mb-4 h-40 bg-gradient-to-br from-blue-500 to-purple-500 rounded flex items-center justify-center overflow-hidden">
+                        <img src="Screenshot 2026-04-17 082431.png" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="neon-glow-blue mb-3">Project 1</h3>
+                    <p class="text-sm text-blue-300 mb-4">
+                    ini adalah project yang saya buat saat sedang belajar membuat website umkm,dan kini sudah 100% selesai
+                    </p>
+                    <a href="coffe_tomorow/index.html" target="_blank" class="text-blue-400 hover:text-blue-300 underline">Lihat Project</a>
+
                 </div>
             </div>
 
-            <!-- Customer Gallery -->
-            <div style="margin-top: 120px;">
-                <div class="sub">Our Lovely Customers</div>
-                <h3 class="luxury-title" style="font-size: 2.5rem; margin-top: 20px;">Customer Moments</h3>
+            <!-- Project Card 2 -->
+            <div class="project-card glow-box-pink hologram">
+                <div class="p-6 bg-gradient-to-br from-pink-900 to-black rounded-lg">
+                    <div class="mb-4 h-40 bg-gradient-to-br from-pink-500 to-red-500 rounded flex items-center justify-center overflow-hidden">
+                        <img src="Screenshot 2026-04-17 082528.png" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="neon-glow-pink mb-3">Project 2</h3>
+                    <p class="text-sm text-pink-300 mb-4">
+                     ini adalah salah satu project yang saya buat, namun belum 100% selesai
+                    </p>
+                    <a href="card_wedding/card-1.html" target="_blank" class="text-pink-400 hover:text-pink-300 underline">Lihat Project</a>
+                  
+                </div>
             </div>
 
-            <div class="customer-grid">
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112556.png" alt="Customer 1">
-                    <span class="cust-handle">@customer_aesthetic1</span>
-                    <p class="cust-desc">Momen santai di sore hari sama Tomorrow Coffee 🤎</p>
-                </div>
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112747.png" alt="Customer 2">
-                    <span class="cust-handle">@coffee_lovers_indo</span>
-                    <p class="cust-desc">Latte art yang perfect! Terimakasih barista 🤎</p>
-                </div>
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112820.png" alt="Customer 3">
-                    <span class="cust-handle">@instagram_worthy</span>
-                    <p class="cust-desc">Setup coffee shop yang aesthetic banget!</p>
-                </div>
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112838.png" alt="Customer 4">
-                    <span class="cust-handle">@coffee_addict_id</span>
-                    <p class="cust-desc">Best cappuccino ever! Balik lagi besok 🤎</p>
-                </div>
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112853.png" alt="Customer 5">
-                    <span class="cust-handle">@photolovers_cafe</span>
-                    <p class="cust-desc">Light dan suasananya sempurna untuk foto 📸</p>
-                </div>
-                <div class="cust-card">
-                    <img src="Screenshot 2026-04-11 112910.png" alt="Customer 6">
-                    <span class="cust-handle">@coffee_storytelling</span>
-                    <p class="cust-desc">Tempat berkumpul yang nyaman dan cozy 🤎</p>
+            <!-- Project Card 3 -->
+            <div class="project-card glow-box hologram">
+                <div class="p-6 bg-gradient-to-br from-green-900 to-black rounded-lg">
+                    <div class="mb-4 h-40 bg-gradient-to-br from-green-500 to-teal-500 rounded flex items-center justify-center overflow-hidden">
+                        <img src="srma.png" alt="Project 3" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="neon-glow mb-3">Project 3</h3>
+                    <p class="text-sm text-green-300 project-3-text mb-4">
+                       ini adalah project terakhir yang saya buat minggu lalu, namun masih dalam tahap pengembangan.
+                    </p>
+                    <a href="website_sekul/identitas.html" target="_blank" class="text-green-400 hover:text-green-300 underline">Lihat Project</a>
+                    </div>
+                 
                 </div>
             </div>
         </div>
+
+        <div class="divider mt-16"></div>
     </section>
 
-    <!-- CONTACT & RESERVATION SECTION -->
-    <section id="contact" class="section-cream">
-        <div class="container">
-            <div class="sub">Get In Touch</div>
-            <h2 class="luxury-title">Reserve Your Table</h2>
-
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Kunjungi Kami</h3>
-                    
-                    <div class="info-item">
-                        <h4>📍 Lokasi</h4>
-                        <p>JJl. Brawijaya No.44, Mangunrejo, Tulungrejo, Kec. Pare, Kabupaten Kediri, Jawa Timur 64212<br></p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>⏰ Jam Operasional</h4>
-                        <p>Senin - Jumat: 07:00 - 22:00<br>
-                           Sabtu - Minggu: 08:00 - 23:00</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>📞 Hubungi Kami</h4>
-                        <p>Phone: +62 821-2345-6789<br>
-                           Email: hello@tomorocoffee.id</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>🌐 Follow Us</h4>
-                        <div class="social-links">
-                            <a href="#" class="social-btn">Instagram</a>
-                            <a href="#" class="social-btn">TikTok</a>
-                            <a href="#" class="social-btn">Facebook</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reservation-card">
-                    <h3>Pesan Meja Sekarang</h3>
-                    <form class="reservation-form">
-                        <div class="form-grid">
-                            <div class="input-wrapper">
-                                <label>Nama Lengkap</label>
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="input-wrapper">
-                                <label>Email</label>
-                                <input type="email" placeholder="your@email.com" required>
-                            </div>
-                            <div class="input-wrapper">
-                                <label>Nomor Telepon</label>
-                                <input type="tel" placeholder="+62 821..." required>
-                            </div>
-                            <div class="input-wrapper">
-                                <label>Tanggal Kunjungan</label>
-                                <input type="date" required>
-                            </div>
-                            <div class="input-wrapper">
-                                <label>Jam Kunjungan</label>
-                                <input type="time" required>
-                            </div>
-                            <div class="input-wrapper">
-                                <label>Jumlah Tamu</label>
-                                <select required>
-                                    <option value="">Pilih Jumlah</option>
-                                    <option value="1">1 Orang</option>
-                                    <option value="2">2 Orang</option>
-                                    <option value="3">3 Orang</option>
-                                    <option value="4">4 Orang</option>
-                                    <option value="5">5-8 Orang</option>
-                                    <option value="6">8+ Orang</option>
-                                </select>
-                            </div>
-                            <div class="input-wrapper full-width">
-                                <label>Pesan Khusus (Opsional)</label>
-                                <textarea placeholder="Tuliskan pesan atau permintaan khusus Anda..." rows="4"></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn-confirm">Konfirmasi Reservasi</button>
-                    </form>
-                </div>
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6372.639319464052!2d112.18149017670748!3d-7.757835992261245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785dea420d9b9b%3A0x1b9b8b6dbc58fb62!2sTOMORO%20COFFEE%20-%20KAMPUNG%20INGGRIS%20PARE!5e1!3m2!1sid!2sid!4v1777691943133!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Tomoro Coffee</h4>
-                    <p>Premium Cafe Experience</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Instagram</a>
-                        <a href="#">TikTok</a>
-                        <a href="#">Facebook</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Tomoro Coffee. All rights reserved. | Designed with ❤ for Coffee Lovers</p>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact" class="content max-w-6xl mx-auto px-4 py-20 text-center">
+        <h2 class="neon-glow-pink mb-8">Contact</h2>
+        
+        <p class="text-lg mb-12 text-blue-300 max-w-2xl mx-auto">
+           hubungi saya melalui 👇
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+            <a href="https://rainrainaaa22@gmail.com" class="contact-link">EMAIL ME</a>
+            <a href="https://rainrainaaa.github.io" target="_blank" class="contact-link">GITHUB</a>
+            <a href="https://www.instagram.com/@rainkecil_" target="_blank" class="contact-link">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@alnr4ina.aaa" target="_blank" class="contact-link">TIKTOK</a>
         </div>
-    </footer>
+        <p class="text-lg mb-12 text-blue-300 max-w-2xl mx-auto">
+           Dan bisa langsung kerumah👇
+        </p>
+<iframe src="https://www.google.com/maps/embed?pb=!3m2!1sid!2sid!4v1778203781860!5m2!1sid!2sid!6m8!1m7!1sKA_Co-iMl6CN_CPjmZjSGw!2m2!1d-7.747054069943673!2d112.1701965090506!3f351.2621865292173!4f-18.253056505515772!5f0.7820865974627469" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <script src="script.js"></script>
+        <div class="divider"></div>
+
+        <!-- Footer -->
+        <p class="mt-8 text-sm text-gray-500">
+            &copy; 2026 aileen raina eartha gunawan. Designed & Built with <span class="neon-glow-pink">✦</span> in the digital realm.
+        </p>
+    </section>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            bodyElement.classList.add('light-mode');
+            themeToggle.classList.add('light-mode');
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', function() {
+            bodyElement.classList.toggle('light-mode');
+            themeToggle.classList.toggle('light-mode');
+
+            // Save preference
+            const theme = bodyElement.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Typing Animation for Name
+        const typingText = document.querySelector('.typing-text');
+        if (typingText) {
+            const text = typingText.textContent;
+            typingText.textContent = '';
+            let index = 0;
+
+            function typeCharacter() {
+                if (index < text.length) {
+                    typingText.textContent += text[index];
+                    index++;
+                    setTimeout(typeCharacter, 100);
+                }
+            }
+
+            // Start typing after page loads
+            window.addEventListener('load', () => {
+                setTimeout(typeCharacter, 300);
+            });
+        }
+
+        // Glitch Effect on Hover for Project Cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.classList.add('glitch');
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.classList.remove('glitch');
+            });
+        });
+
+        // Parallax effect on scroll (optimized for performance)
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.hero');
+                    if (hero && scrolled < window.innerHeight * 1.5) {
+                        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Add random particles (reduce on mobile devices)
+        const isMobileDevice = window.innerWidth < 768;
+        const particleThreshold = isMobileDevice ? 0.85 : 0.7;
+        const particleInterval = isMobileDevice ? 1000 : 500;
+        
+        function createParticle() {
+            const hero = document.querySelector('.hero');
+            if (hero && Math.random() > particleThreshold) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                hero.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 3500);
+            }
+        }
+
+        setInterval(createParticle, particleInterval);
+
+        // Add glow effect to cursor for some elements
+        document.querySelectorAll('.neon-glow, .neon-glow-blue, .neon-glow-pink').forEach(element => {
+            element.addEventListener('mouseover', function () {
+                this.style.textShadow = this.style.textShadow + ', 0 0 30px rgba(255, 255, 255, 0.5)';
+            });
+        });
+    </script>
 </body>
 </html>

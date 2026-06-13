@@ -1,0 +1,25 @@
+{
+  "name": "cyberpunk-developer-portfolio",
+  "version": "1.0.0",
+  "description": "Futuristic cyberpunk developer portfolio website with neon effects and animations",
+  "author": "Your Name",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "cyberpunk",
+    "developer",
+    "neon",
+    "tailwind",
+    "responsive"
+  ],
+  "scripts": {
+    "start": "npx http-server -p 8000",
+    "serve": "python -m http.server 8000",
+    "dev": "npx live-server",
+    "build": "echo 'No build needed - pure HTML/CSS/JS'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio"
+  }
+}
