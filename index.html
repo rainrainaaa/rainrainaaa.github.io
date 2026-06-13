@@ -1,370 +1,430 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRMA 24 KEDIRI</title>
-
-<!-- Font Awesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, sans-serif;
-    }
-
-    body{
-        background:#f4f4f4;
-    }
-
-    /* HEADER */
-    header{
-        background:#bf2642;
-        color:white;
-        padding:15px 50px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    }
-
-    .logo{
-        display:flex;
-        align-items:center;
-    }
-
-    .logo img{
-        width:60px;
-        height:60px;
-        margin-right:10px;
-    }
-
-    .logo h2{
-        font-size:22px;
-    }
-
-    /* MENU */
-    nav ul{
-        list-style:none;
-        display:flex;
-        align-items:center;
-    }
-
-    nav ul li{
-        position:relative;
-        margin-left:25px;
-    }
-
-    nav ul li a{
-        text-decoration:none;
-        color:white;
-        font-weight:bold;
-        padding:10px;
-        display:block;
-        transition:0.3s;
-    }
-
-    nav ul li a:hover{
-        color:#ffd700;
-    }
-
-    /* DROPDOWN */
-    .submenu{
-        display:none;
-        position:absolute;
-        top:100%;
-        left:0;
-        background:white;
-        min-width:220px;
-        box-shadow:0 5px 10px rgba(0,0,0,0.2);
-        z-index:1000;
-    }
-
-    .submenu li{
-        margin:0;
-    }
-
-    .submenu li a{
-        color:#333;
-        padding:12px 15px;
-        border-bottom:1px solid #eee;
-    }
-
-    .submenu li a:hover{
-        background:#9e0a0ae6;
-        color:white;
-    }
-
-    .dropdown:hover .submenu{
-        display:block;
-    }
-
-    /* HERO */
-    .hero{
-        height:85vh;
-        background:
-        linear-gradient(
-            rgba(211, 103, 103, 0.775),
-            rgba(237, 122, 122, 0.775)
-        ),
-        url('temanteman.jpg')
-        center/cover;
-
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-        color:white;
-    }
-
-    .hero-content h1{
-        font-size:50px;
-        margin-bottom:15px;
-    }
-
-    .hero-content p{
-        font-size:20px;
-        margin-bottom:25px;
-    }
-
-    .btn{
-        display:inline-block;
-        background:#ffd700;
-        color:black;
-        padding:12px 25px;
-        border-radius:5px;
-        text-decoration:none;
-        font-weight:bold;
-        transition:.3s;
-    }
-
-    .btn:hover{
-        background:white;
-    }
-
-    /* FOOTER */
-    .footer{
-        background:#bc1919;
-        color:white;
-    }
-
-    .footer-container{
-        max-width:1200px;
-        margin:auto;
-        padding:50px 20px;
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-        gap:40px;
-    }
-
-    .footer-box h3{
-        margin-bottom:20px;
-        padding-bottom:10px;
-        border-bottom:2px solid #ffd700;
-    }
-
-    .footer-box p{
-        margin-bottom:15px;
-        line-height:1.7;
-    }
-
-    /* TAGS */
-    .tags{
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
-    }
-
-    .tags span{
-        border:1px solid white;
-        padding:10px 15px;
-        transition:.3s;
-        cursor:pointer;
-    }
-
-    .tags span:hover{
-        background:white;
-        color:#004080;
-    }
-
-    /* SOCIAL */
-    .social{
-        display:flex;
-        gap:15px;
-    }
-
-    .social a{
-        width:50px;
-        height:50px;
-        border-radius:50%;
-        background:#e41818;
-        color:white;
-        text-decoration:none;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        font-size:18px;
-        transition:.3s;
-    }
-
-    .social a:hover{
-        background:#ffd700;
-        color:#d71b1b;
-    }
-
-    .copyright{
-        background:#c22f2f;
-        text-align:center;
-        padding:15px;
-        font-size:14px;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width:768px){
-
-        header{
-            flex-direction:column;
-            padding:15px;
-        }
-
-        nav ul{
-            flex-direction:column;
-            width:100%;
-            margin-top:15px;
-        }
-
-        nav ul li{
-            margin:5px 0;
-        }
-
-        .submenu{
-            position:static;
-            box-shadow:none;
-        }
-
-        .hero-content h1{
-            font-size:32px;
-        }
-
-        .hero-content p{
-            font-size:16px;
-        }
-    }
-
-</style>
-
-
+    <title>Tomoro Coffee | Premium Cafe Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Jost:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-
-<div class="logo">
-    <img src="logo-sekolah.png" alt="Logo Sekolah">
-    <h2>SRMA 24 KEDIRI</h2>
-</div>
-
-<nav>
-    <ul>
-
-        <li><a href="index.html">Home</a></li>
-
-        <li class="dropdown">
-            <a href="#">Profil ▼</a>
-            <ul class="submenu">
-                <li><a href="identitas.html">Identitas</a></li>
-                <li><a href="visi.html">Visi & Misi</a></li>
-                <li><a href="kepala-sekolah.html">Kepala Sekolah</a></li>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container-wide nav-content">
+            <div class="logo">TOMORO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="btn-nav-res">Reserve Table</a></li>
             </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#">Academic ▼</a>
-            <ul class="submenu">
-                <li><a href="program-kurikulum.html">Program Kurikulum</a></li>
-                <li><a href="struktur-kurikulum.html">Struktur Kurikulum</a></li>
-                <li><a href="prestasi.html">Prestasi</a></li>
-            </ul>
-        </li>
-
-        <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-    </ul>
-</nav>
-
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-    <h1>Selamat Datang di Website Sekolah</h1>
-
-    <p>
-        Mencetak Generasi Unggul,
-        Berprestasi, dan Berkarakter
-    </p>
-
-    <a href="identitas.html" class="btn">
-        Lihat Profil Sekolah
-    </a>
-</div>
-
-</section>
-
-<footer class="footer">
-
-<div class="footer-container">
-
-    <div class="footer-box">
-        <h3>Hubungi Kami</h3>
-
-        <p><strong>SRMA 24 Kediri</strong></p>
-
-        <p>
-            📍 Gang 2, Bulusari Utara,
-            Bulusari, Kec. Tarokan,
-            Kabupaten Kediri, Jawa Timur
-        </p>
-
-        <p>📞 (0354) 123456</p>
-
-        <p>✉️ srma24kediri@gmail.com</p>
-    </div>
-
-    <div class="footer-box">
-        <h3>Tags</h3>
-
-        <div class="tags">
-            <span>SEKILAS INFO</span>
-            <span>PENGUMUMAN</span>
-            <span>BERITA</span>
-            <span>PRESTASI</span>
         </div>
-    </div>
+    </nav>
 
-    <div class="footer-box">
-        <h3>Ikuti Kami</h3>
-
-        <div class="social">
-            <a href="https://www.instagram.com/@srma24kediri"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Srma24Kediri"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@srma24.kediri"><i class="fab fa-tiktok"></i></a>
+    <!-- HERO SECTION -->
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <img src="Tomoro Coffee.jpg" alt="Premium Coffee">
         </div>
-    </div>
+        <div class="hero-title">
+            <span class="fade-up">100% Arabica Experience</span>
+            <h1>Tomoro <i>Coffee</i></h1>
+            <p>Start Your Tomorrow with a Perfect Coffee</p>
+            </div>
+        </div>
+    </header>
 
-</div>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-white">
+        <div class="container">
+            <div class="sub">About Us</div>
+            <h2 class="luxury-title">Lebih Dari Sekadar Kopi</h2>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Filosofi Tomoro Coffee</h3>
+                    <p>"Tomoro Coffee" bukan hanya nama, melainkan filosofi hidup. Kami percaya bahwa setiap tegukan kopi adalah ritual untuk mempersiapkan diri menghadapi hari esok. Bukan sekadar minuman, kopi adalah momen berharga untuk reflexi diri dan mencari inspirasi.</p>
+                    <p>Kami menghadirkan pengalaman cafe yang cozy, aesthetic, dan premium. Tempat di mana Anda bisa bersantai di sore hari, berbagi cerita dengan teman, atau sekadar menemukan ketenangan dalam kehidupan yang sibuk.</p>
+                </div>
+                <div class="about-image">
+                    <img src="Tomoro Coffee (1).jpg" alt="Coffee Brewing">
+                </div>
+            </div>
 
-<div class="copyright">
-    © 2026 SRMA 24 KEDIRI. All Rights Reserved.
-</div>
+            <div class="values-section">
+                <div class="value-card">
+                    <h4>Premium Quality</h4>
+                    <p>Menggunakan biji kopi pilihan 100% Arabica dari perkebunan terbaik</p>
+                </div>
+                <div class="value-card">
+                    <h4>Aesthetic Space</h4>
+                    <p>Desain interior modern dengan sudut-sudut yang instagrammable</p>
+                </div>
+                <div class="value-card">
+                    <h4>Cozy Vibes</h4>
+                    <p>Atmosfer hangat dan nyaman untuk setiap momen berharga Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</footer>
+    <!-- MENU SECTION -->
+    <section id="menu" class="section-cream">
+        <div class="container">
+            <div class="sub">Our Collection</div>
+            <h2 class="luxury-title">Pilihan Menu Premium</h2>
+            
+            <div class="luxury-menu-wrapper">
+                <!-- COFFEE MENU -->
+                <div class="menu-column">
+                    <div class="category-label">ESPRESSO-BASED</div>
+                    
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Espresso Classic</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 25.000</span>
+                        </div>
+                        <p class="item-desc">Single shot espresso dengan crema yang sempurna</p>
+                    </div>
 
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Cappuccino Premium</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 35.000</span>
+                        </div>
+                        <p class="item-desc">Espresso dengan steamed milk dan latte art</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Caramel Macchiato</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 40.000</span>
+                        </div>
+                        <p class="item-desc">Kombinasi manis caramel dengan espresso dan milk</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Flat White</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 38.000</span>
+                        </div>
+                        <p class="item-desc">Smooth espresso dengan microfoam milk</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Americano</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 28.000</span>
+                        </div>
+                        <p class="item-desc">Espresso dengan hot water untuk rasa panjang</p>
+                    </div>
+
+                    <div class="category-label" style="margin-top: 60px;">SPECIALTY COFFEE</div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Affogato</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 32.000</span>
+                        </div>
+                        <p class="item-desc">Vanilla ice cream dengan hot espresso</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Cold Brew</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 35.000</span>
+                        </div>
+                        <p class="item-desc">Kopi dingin yang smooth dan less acidic</p>
+                    </div>
+                </div>
+
+                <!-- NON-COFFEE & DESSERT MENU -->
+                <div class="menu-column">
+                    <div class="category-label">NON-COFFEE</div>
+                    
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Matcha Latte</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 38.000</span>
+                        </div>
+                        <p class="item-desc">Premium matcha latte dengan steamed milk</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Chocolate Mocha</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 40.000</span>
+                        </div>
+                        <p class="item-desc">Premium cocoa dengan espresso dan whipped cream</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Iced Lemon Tea</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 25.000</span>
+                        </div>
+                        <p class="item-desc">Teh segar dengan lemon dan ice</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Strawberry Lemonade</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 32.000</span>
+                        </div>
+                        <p class="item-desc">Lemon segar dengan strawberry puree</p>
+                    </div>
+
+                    <div class="category-label" style="margin-top: 60px;">DESSERTS & FOOD</div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Tiramisu Cake</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 45.000</span>
+                        </div>
+                        <p class="item-desc">Classic tiramisu dengan mascarpone dan cocoa</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Chocolate Lava Cake</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 48.000</span>
+                        </div>
+                        <p class="item-desc">Warm chocolate cake dengan melting center</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Croissant Butter</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 35.000</span>
+                        </div>
+                        <p class="item-desc">Fresh croissant premium dari baker lokal</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Cheesecake Premium</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 50.000</span>
+                        </div>
+                        <p class="item-desc">New York style cheesecake dengan blueberry</p>
+                    </div>
+
+                    <div class="luxury-item">
+                        <div class="item-head">
+                            <h3>Matcha Cheesecake</h3>
+                            <div class="line"></div>
+                            <span class="price">Rp 52.000</span>
+                        </div>
+                        <p class="item-desc">Fusion dessert dengan matcha dan cheese</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION - AESTHETIC CORNERS -->
+    <section id="gallery" class="section-white">
+        <div class="container">
+            <div class="sub">Visual Story</div>
+            <h2 class="luxury-title">Aesthetic Cafe Corners</h2>
+            <p class="section-desc">Nikmati setiap sudut cafe yang dirancang khusus untuk menciptakan momen aesthetic Anda</p>
+            
+            <!-- Aesthetic Grid -->
+            <div class="aesthetic-grid">
+                <div class="grid-item wide">
+                    <img src="download (45).jpg" alt="Aesthetic Corner 1">
+                </div>
+                <div class="grid-item tall">
+                    <img src="cafe.jpg" alt="Aesthetic Corner 2">
+                </div>
+                <div class="grid-item">
+                    <img src="🍀.jpg" alt="Coffee Detail">
+                </div>
+                <div class="grid-item">
+                    <img src="Tomoro coffe.jpg" alt="Latte Art">
+                </div>
+                <div class="grid-item">
+                    <img src="📍Tomoro Coffe Jember.jpg" alt="Barista">
+                </div>
+                <div class="grid-item wide tall">
+                    <img src="download (26).jpg" alt="Cafe Interior">
+                </div>
+            </div>
+
+            <!-- Customer Gallery -->
+            <div style="margin-top: 120px;">
+                <div class="sub">Our Lovely Customers</div>
+                <h3 class="luxury-title" style="font-size: 2.5rem; margin-top: 20px;">Customer Moments</h3>
+            </div>
+
+            <div class="customer-grid">
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112556.png" alt="Customer 1">
+                    <span class="cust-handle">@customer_aesthetic1</span>
+                    <p class="cust-desc">Momen santai di sore hari sama Tomorrow Coffee 🤎</p>
+                </div>
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112747.png" alt="Customer 2">
+                    <span class="cust-handle">@coffee_lovers_indo</span>
+                    <p class="cust-desc">Latte art yang perfect! Terimakasih barista 🤎</p>
+                </div>
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112820.png" alt="Customer 3">
+                    <span class="cust-handle">@instagram_worthy</span>
+                    <p class="cust-desc">Setup coffee shop yang aesthetic banget!</p>
+                </div>
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112838.png" alt="Customer 4">
+                    <span class="cust-handle">@coffee_addict_id</span>
+                    <p class="cust-desc">Best cappuccino ever! Balik lagi besok 🤎</p>
+                </div>
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112853.png" alt="Customer 5">
+                    <span class="cust-handle">@photolovers_cafe</span>
+                    <p class="cust-desc">Light dan suasananya sempurna untuk foto 📸</p>
+                </div>
+                <div class="cust-card">
+                    <img src="Screenshot 2026-04-11 112910.png" alt="Customer 6">
+                    <span class="cust-handle">@coffee_storytelling</span>
+                    <p class="cust-desc">Tempat berkumpul yang nyaman dan cozy 🤎</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & RESERVATION SECTION -->
+    <section id="contact" class="section-cream">
+        <div class="container">
+            <div class="sub">Get In Touch</div>
+            <h2 class="luxury-title">Reserve Your Table</h2>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Kunjungi Kami</h3>
+                    
+                    <div class="info-item">
+                        <h4>📍 Lokasi</h4>
+                        <p>JJl. Brawijaya No.44, Mangunrejo, Tulungrejo, Kec. Pare, Kabupaten Kediri, Jawa Timur 64212<br></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>⏰ Jam Operasional</h4>
+                        <p>Senin - Jumat: 07:00 - 22:00<br>
+                           Sabtu - Minggu: 08:00 - 23:00</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>📞 Hubungi Kami</h4>
+                        <p>Phone: +62 821-2345-6789<br>
+                           Email: hello@tomorocoffee.id</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>🌐 Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-btn">Instagram</a>
+                            <a href="#" class="social-btn">TikTok</a>
+                            <a href="#" class="social-btn">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-card">
+                    <h3>Pesan Meja Sekarang</h3>
+                    <form class="reservation-form">
+                        <div class="form-grid">
+                            <div class="input-wrapper">
+                                <label>Nama Lengkap</label>
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Email</label>
+                                <input type="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Nomor Telepon</label>
+                                <input type="tel" placeholder="+62 821..." required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Tanggal Kunjungan</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Jam Kunjungan</label>
+                                <input type="time" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Jumlah Tamu</label>
+                                <select required>
+                                    <option value="">Pilih Jumlah</option>
+                                    <option value="1">1 Orang</option>
+                                    <option value="2">2 Orang</option>
+                                    <option value="3">3 Orang</option>
+                                    <option value="4">4 Orang</option>
+                                    <option value="5">5-8 Orang</option>
+                                    <option value="6">8+ Orang</option>
+                                </select>
+                            </div>
+                            <div class="input-wrapper full-width">
+                                <label>Pesan Khusus (Opsional)</label>
+                                <textarea placeholder="Tuliskan pesan atau permintaan khusus Anda..." rows="4"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-confirm">Konfirmasi Reservasi</button>
+                    </form>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6372.639319464052!2d112.18149017670748!3d-7.757835992261245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785dea420d9b9b%3A0x1b9b8b6dbc58fb62!2sTOMORO%20COFFEE%20-%20KAMPUNG%20INGGRIS%20PARE!5e1!3m2!1sid!2sid!4v1777691943133!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tomoro Coffee</h4>
+                    <p>Premium Cafe Experience</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">TikTok</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tomoro Coffee. All rights reserved. | Designed with ❤ for Coffee Lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
