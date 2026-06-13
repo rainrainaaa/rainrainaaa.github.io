@@ -1,0 +1,69 @@
+:root {
+    --shadow: 0 2px 2px rgba(0, 0, 0/0.5)
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'work sans', sans-serif;
+    color: rgb(104, 108, 108);
+
+}
+.hero::before {content:"" ;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("download (18).jpg");
+  z-index: -1;
+  filter:grayscale(50%);
+}
+
+.hero {
+    max-height: 100vh;
+    background-color: rgb(31, 33, 33)
+}
+
+.hero h1 { 
+    .lobster-two-regular {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lobster-two-bold {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-regular-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lobster-two-bold-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+}
+.hero a:hover{
+    color: rgb(85, 86, 88);
+}
+
+
+/*media query*/
+/*laptop*/
+@media(min-width:992px){
+  html { font-size: 30px; }
+}
+/*tablet*/
+@media(min-width:768px){html {font-size: 24px;}}
+/*mobile phone*/
+@media(min-width:576px){ html {font-size: 15px;}}
+
+
+  
+    
