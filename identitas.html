@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identitas Sekolah - SRMA 24 Kediri</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        background-color:#f4f4f4;
+    }
+
+    /* Header */
+    header{
+        background-color:#ee3b3b;
+        color:white;
+        padding:15px 50px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        display:flex;
+        align-items:center;
+    }
+
+    .logo img{
+        width:60px;
+        height:60px;
+        margin-right:10px;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    /* Menu */
+    nav ul{
+        list-style:none;
+        display:flex;
+        align-items:center;
+    }
+
+    nav ul li{
+        position:relative;
+        margin-left:25px;
+    }
+
+    nav ul li a{
+        text-decoration:none;
+        color:white;
+        font-weight:bold;
+        transition:0.3s;
+        padding:10px;
+        display:block;
+    }
+
+    nav ul li a:hover{
+        color:#ffd700;
+    }
+
+    /* Dropdown */
+    .submenu{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        background:white;
+        min-width:220px;
+        box-shadow:0 5px 10px rgba(0,0,0,0.2);
+        z-index:1000;
+    }
+
+    .submenu li{
+        margin:0;
+        list-style:none;
+    }
+
+    .submenu li a{
+        color:#333;
+        padding:12px 15px;
+        border-bottom:1px solid #eee;
+    }
+
+    .submenu li a:hover{
+        background-color:#004080;
+        color:white;
+    }
+
+    .dropdown:hover .submenu{
+        display:block;
+    }
+
+    /* Hero */
+    .hero{
+        height:50vh;
+        background:
+            linear-gradient(
+                rgba(128, 0, 0, 0.6),
+                rgba(147, 6, 6, 0.6)
+            ),
+            url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200')
+            center/cover;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        color:white;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+        margin-bottom:15px;
+    }
+
+    .hero-content p{
+        font-size:20px;
+    }
+
+    /* Identitas */
+    .identitas{
+        padding:60px 20px;
+    }
+
+    .container{
+        max-width:1000px;
+        margin:auto;
+        background:white;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .container h2{
+        text-align:center;
+        color:#004080;
+        margin-bottom:25px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+    }
+
+    table td{
+        padding:15px;
+        border-bottom:1px solid #ddd;
+        vertical-align:top;
+    }
+
+    table tr:hover{
+        background:#f8f9fa;
+    }
+
+    table td:first-child{
+        width:30%;
+        font-weight:bold;
+        color:#004080;
+    }
+
+    table td:nth-child(2){
+        width:5%;
+        text-align:center;
+    }
+
+    /* Footer */
+    footer{
+        background-color:#c70f0f;
+        color:white;
+        text-align:center;
+        padding:15px;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+        header{
+            flex-direction:column;
+            padding:15px;
+        }
+
+        nav ul{
+            flex-direction:column;
+            width:100%;
+            margin-top:15px;
+        }
+
+        nav ul li{
+            margin:5px 0;
+        }
+
+        .submenu{
+            position:static;
+            box-shadow:none;
+        }
+
+        .hero-content h1{
+            font-size:32px;
+        }
+
+        .hero-content p{
+            font-size:16px;
+        }
+
+        table td{
+            display:block;
+            width:100%;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+    <header>
+
+        <div class="logo">
+            <img src="logo-sekolah.png" alt="Logo Sekolah">
+            <h2>SRMA 24 KEDIRI</h2>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Profil ▼</a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="identitas.html">Identitas</a>
+                        </li>
+                        <li>
+                            <a href="visi.html">Visi & Misi</a>
+                        </li>
+                        <li>
+                            <a href="kepala-sekolah.html">Kepala Sekolah</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Academic ▼</a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="program-kurikulum.html">Program Kurikulum</a>
+                        </li>
+                        <li>
+                            <a href="struktur-kurikulum.html">Struktur Kurikulum</a>
+                        </li>
+                        <li>
+                            <a href="prestasi.html">Prestasi</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="galeri.html">Galeri</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+<section class="identitas">
+    <div class="container">
+
+    <h2>Data Identitas Sekolah</h2>
+
+    <table>
+        <tr>
+            <td>Nama Sekolah</td>
+            <td>:</td>
+            <td>Sekolah Rakyat Menengah Atas 24 Kediri</td>
+        </tr>
+
+        <tr>
+            <td>NPSN</td>
+            <td>:</td>
+            <td>70055438</td>
+        </tr>
+
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td>Gang 2, Bulusari Utara, Bulusari, Kec. Tarokan, Kabupaten Kediri, Jawa Timur</td>
+        </tr>
+
+        <tr>
+            <td>Desa/Kelurahan</td>
+            <td>:</td>
+            <td>TAROKAN</td>
+        </tr>
+
+        <tr>
+            <td>Kecamatan</td>
+            <td>:</td>
+            <td>KEC. TAROKAN</td>
+        </tr>
+
+        <tr>
+            <td>Kabupaten</td>
+            <td>:</td>
+            <td>KAB. KEDIRI</td>
+        </tr>
+
+        <tr>
+            <td>Provinsi</td>
+            <td>:</td>
+            <td>PROV. JAWA TIMUR</td>
+        </tr>
+
+        <tr>
+            <td>Status Sekolah</td>
+            <td>:</td>
+            <td>NEGERI</td>
+        </tr>
+
+        <tr>
+            <td>Bentuk Pendidikan</td>
+            <td>:</td>
+            <td>SMA</td>
+        </tr>
+
+        <tr>
+            <td>Jenjang Pendidikan</td>
+            <td>:</td>
+            <td>DIKMEN</td>
+        </tr>
+    </table>
+
+</div>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 SRMA 24 KEDIRI.</p>
+</footer>
+
+</body>
+</html>
